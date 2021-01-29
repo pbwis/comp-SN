@@ -13,7 +13,7 @@ Start-Process -FilePath "location to file.exe" -Verb runAs -ArgumentList '/s','/
 Copy-Item -Path "Z:\path to file" -Destination "C:\!Test_PowerShell\path to folder" -Recurse
 
 
-Start-Process ((Resolve-Path "C:\!Test_PowerShell\folder3\Brzydula, odcinek 10, sezon 1.mp4").Path)
+Start-Process ((Resolve-Path "C:\!Test_PowerShell\folder3\aaaaaa").Path)
 
 $file = "C:\!Test_PowerShell\folder3\path to file"
 if (Test-Path -path $file)
