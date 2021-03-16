@@ -28,7 +28,7 @@ Expand-Archive -Path $Target -DestinationPath $Drivers
 
 
 # Install driver
-$M1 = 'Toshiba Universla Print Driver'
+$M1 = 'Toshiba Universal Print Driver'
 $P = 'C:\Toshiba_UNI_driver\Drivers\link to .inf file'   # change this link
 rundll32.exe printui.dll, PrintUIEntry /ia /m "$M1" /f "$P"
 
