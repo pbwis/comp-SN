@@ -35,7 +35,16 @@ rundll32.exe printui.dll, PrintUIEntry /ia /m "$M1" /f "$P"
 
 # Add new Port
 $PPHT = @{
-    Name = 'IT_Department'
+    Name = 'IT_Printer_IP'
     PrinterHostAddress = '10.10.10.85'
 }
 Add-PrinterPort @PPHT
+
+
+# Add printer
+$PRHT = @{
+    Name = 'IT_dept_printer'
+    DriverName = $M1
+    PortName = 'IT_Printer_IP'
+}
+Add-Printer @PRHT
