@@ -17,14 +17,14 @@ Start-Process ((Resolve-Path "C:\!Test_PowerShell\folder3\aaaaaa").Path)
 
 $file = "C:\!Test_PowerShell\folder3\path to file"
 if (Test-Path -path $file)
-{
+    {
 
-    Start-Process ((Resolve-Path "C:\!Test_PowerShell\folder3\path to file").Path)
-}
+        Start-Process ((Resolve-Path "C:\!Test_PowerShell\folder3\path to file").Path)
+    }
 
 else
-{
-    return None
-}
+    {
+        return None
+    }
 
 "notepad","calc","wmplayer", "explorer" | ForEach-Object {Start-Process $_} | Wait-Process ;dir

@@ -48,3 +48,13 @@ $PRHT = @{
     PortName = 'IT_Printer_IP'
 }
 Add-Printer @PRHT
+
+
+# Sharing printer
+Set-Printer -Name IT_dept_printer -Shared $True
+
+
+# Review configuration
+Get-PrinterPort -Name IT_Printer_IP | Format-Table -AutoSize -Property Name, Description, PrinterHostAddress, PortNumber
+Get-PrinterDriver -Name Toshiba | Format-Table -Property Name, Manufacturer, DriverVersion, PrinterEnvironment
+Get-Printer -ComputerName PSRV -Name IT_dept_printer | Format-Table -Property Name, ComputerName, Type, PortName, Location, Shared
