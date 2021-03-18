@@ -58,3 +58,8 @@ Set-Printer -Name IT_dept_printer -Shared $True
 Get-PrinterPort -Name IT_Printer_IP | Format-Table -AutoSize -Property Name, Description, PrinterHostAddress, PortNumber
 Get-PrinterDriver -Name Toshiba | Format-Table -Property Name, Manufacturer, DriverVersion, PrinterEnvironment
 Get-Printer -ComputerName PSRV -Name IT_dept_printer | Format-Table -Property Name, ComputerName, Type, PortName, Location, Shared
+
+# Get the printer object
+Import-Module -Name PrintManagement -WarningAction SilentlyContinue
+$Printer = Get-Printer -Name IT_dept_printer
+$Printer | Format-Table -Property Name, Published
