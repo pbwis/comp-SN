@@ -15,9 +15,3 @@ If(-Not $installed) {
     $app.Uninstall()
 }
 
-
-<# Examples for considerations:
-     Start-Process -FilePath "C:\!Test_PowerShell\files\npp.7.9.3.Installer.x64.exe" -Verb runAs -ArgumentList '/s','/v"/qn"'
-     Start-Process .\installer.exe /S -NoNewWindow -Wait -PassThru
-     -NoNewWindow -Wait -PassThru $process.ExitCode
-#>
